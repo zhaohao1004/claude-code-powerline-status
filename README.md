@@ -53,7 +53,12 @@
 
 ## 🚀 快速开始
 
-### 1. 安装依赖
+### 前置要求
+
+确保系统已安装：
+- **jq** (必需) - JSON 解析器
+- **git** (可选) - Git 信息显示
+- **bc** (可选) - 成本计算
 
 **macOS:**
 ```bash
@@ -65,27 +70,39 @@ brew install jq git bc
 sudo apt-get install jq git bc
 ```
 
-### 2. 安装状态栏
-
-#### 方法 1: 使用安装脚本（推荐）
+### 方式 1: 一键安装（推荐）
 
 ```bash
-git clone https://github.com/your-username/status-bar.git
-cd status-bar
-./install.sh
+# 克隆仓库
+git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+cd claude-code-powerline-status
+
+# 安装到系统
+./run.sh install
 ```
 
-#### 方法 2: 手动安装
+### 方式 2: 手动安装
 
 ```bash
 # 1. 复制脚本到 Claude 配置目录
-cp statusline.sh ~/.claude/statusline.sh
-
-# 2. 添加执行权限
+cp src/statusline.sh ~/.claude/statusline.sh
 chmod +x ~/.claude/statusline.sh
 
-# 3. 更新配置文件
+# 2. 更新配置文件
 # 编辑 ~/.claude/settings.json，添加 statusLine 配置
+```
+
+### 验证安装
+
+```bash
+# 运行测试
+./run.sh test
+
+# 查看演示
+./run.sh demo
+
+# 验证项目
+./run.sh verify
 ```
 
 ### 3. 配置 Claude Code
@@ -106,12 +123,42 @@ chmod +x ~/.claude/statusline.sh
 
 重启 Claude Code 以使配置生效。
 
+## 📁 项目结构
+
+```
+claude-code-powerline-status/
+├── README.md                    # 项目文档
+├── LICENSE                      # MIT 许可证
+├── CHANGELOG.md                 # 版本更新日志
+├── run.sh                       # 便捷运行脚本
+│
+├── src/                         # 源代码
+│   └── statusline.sh            # 主状态栏脚本
+│
+├── scripts/                     # 工具脚本
+│   ├── install.sh               # 安装脚本
+│   ├── uninstall.sh             # 卸载脚本
+│   ├── demo.sh                  # 演示脚本
+│   └── verify.sh                # 验证脚本
+│
+├── tests/                       # 测试文件
+│   └── test.sh                  # 测试套件
+│
+├── docs/                        # 文档
+│   ├── CONTRIBUTING.md          # 贡献指南
+│   ├── PROJECT_SUMMARY.md       # 项目总结
+│   └── QUICK_REFERENCE.md       # 快速参考
+│
+└── config/                      # 配置示例
+    └── settings.example.json    # Claude Code 配置示例
+```
+
 ## 🧪 测试
 
-运行测试套件：
+### 运行测试套件
 
 ```bash
-./test.sh
+./run.sh test
 ```
 
 测试包括：
@@ -294,11 +341,11 @@ git clone https://github.com/your-username/status-bar.git
 cd status-bar
 
 # 运行测试
-./test.sh
+./run.sh test
 
 # 本地测试
 echo '{"workspace":{"current_dir":"/tmp"},"context_window":{"used_percentage":25}}' \
-  | ./statusline.sh
+  | ./src/statusline.sh
 ```
 
 ## 📄 许可证

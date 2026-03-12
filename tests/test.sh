@@ -29,7 +29,7 @@ run_test() {
 
     # 执行脚本
     local output
-    if output=$(echo "$test_input" | ./statusline.sh 2>&1); then
+    if output=$(echo "$test_input" | ../src/statusline.sh 2>&1); then
         echo -e "输出: ${GREEN}${output}${NC}"
 
         # 如果有预期模式，验证输出
@@ -177,7 +177,7 @@ echo -e "${BLUE}测试: 执行时间（100 次迭代）${NC}"
 start_time=$(date +%s)
 for i in {1..100}; do
     echo '{"workspace":{"current_dir":"/tmp"},"context_window":{"used_percentage":25}}' \
-        | ./statusline.sh > /dev/null 2>&1
+        | ../src/statusline.sh > /dev/null 2>&1
 done
 end_time=$(date +%s)
 elapsed_sec=$((end_time - start_time))
@@ -201,12 +201,12 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
 
     # 第一次执行（可能从缓存读取）
     echo "{\"workspace\":{\"current_dir\":\"$(pwd)\"},\"context_window\":{\"used_percentage\":25}}" \
-        | ./statusline.sh > /dev/null 2>&1
+        | ../src/statusline.sh > /dev/null 2>&1
 
     # 第二次执行（应该从缓存读取）
     start_time=$(date +%s)
     echo "{\"workspace\":{\"current_dir\":\"$(pwd)\"},\"context_window\":{\"used_percentage\":25}}" \
-        | ./statusline.sh > /dev/null 2>&1
+        | ../src/statusline.sh > /dev/null 2>&1
     end_time=$(date +%s)
     elapsed_sec=$((end_time - start_time))
 
@@ -253,7 +253,7 @@ test_input='{
   }
 }'
 
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 echo -e "${GREEN}✓ 视觉测试完成${NC}"
 ((TESTS_PASSED++))
@@ -265,7 +265,7 @@ total_tests
 
 echo -e "${YELLOW}提示:${NC}"
 echo "如果所有测试通过，可以运行以下命令安装到系统："
-echo "  cp ./statusline.sh ~/.claude/statusline.sh"
+echo "  cp ../src/statusline.sh ~/.claude/statusline.sh"
 echo "  chmod +x ~/.claude/statusline.sh"
 echo ""
 echo "然后更新 ~/.claude/settings.json："

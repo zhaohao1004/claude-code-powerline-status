@@ -131,12 +131,12 @@ main() {
     fi
 
     # 复制脚本
-    if [ -f "./$SCRIPT_NAME" ]; then
-        cp "./$SCRIPT_NAME" "$target_file"
+    if [ -f "$(dirname "$0")/../src/$SCRIPT_NAME" ]; then
+        cp "$(dirname "$0")/../src/$SCRIPT_NAME" "$target_file"
         chmod +x "$target_file"
         print_success "脚本已安装: $target_file"
     else
-        print_error "找不到源文件: ./$SCRIPT_NAME"
+        print_error "找不到源文件: src/$SCRIPT_NAME"
         print_info "请确保在项目目录中运行此脚本"
         exit 1
     fi
@@ -252,7 +252,8 @@ EOF
     # 显示文档链接
     echo -e "${BOLD}文档和支持:${NC}"
     echo ""
-    echo "  - README: $(pwd)/README.md"
+    echo "  - README: $(cd "$(dirname "$0")/.." && pwd)/README.md"
+    echo "  - 快速参考: docs/QUICK_REFERENCE.md"
     echo "  - 问题反馈: GitHub Issues"
     echo ""
 }

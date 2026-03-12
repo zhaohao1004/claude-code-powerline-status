@@ -39,7 +39,7 @@ test_input='{
     }
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 # 场景 2: 中等使用率
@@ -60,7 +60,7 @@ test_input='{
     }
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 # 场景 3: 高使用率
@@ -81,7 +81,7 @@ test_input='{
     }
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 # 场景 4: 使用 Worktree
@@ -105,7 +105,7 @@ test_input='{
     "name": "feature-auth-system"
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 # 场景 5: 显示成本
@@ -129,7 +129,7 @@ test_input='{
     "total_cost_usd": 2.47
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 # 场景 6: 完整信息
@@ -156,7 +156,7 @@ test_input='{
     "total_cost_usd": 5.89
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 # 场景 7: 非 Git 目录
@@ -177,7 +177,7 @@ test_input='{
     }
   }
 }'
-echo "$test_input" | ./statusline.sh
+echo "$test_input" | ../src/statusline.sh
 echo ""
 
 echo -e "${BOLD}颜色说明:${NC}"

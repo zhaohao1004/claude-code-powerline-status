@@ -20,30 +20,34 @@ echo -e "${BOLD}${BLUE}  项目完整性验证${NC}"
 echo -e "${BOLD}${BLUE}=====================================${NC}"
 echo ""
 
-# 必需文件列表
+# 必需文件列表（相对于项目根目录）
 REQUIRED_FILES=(
-    "statusline.sh"
-    "test.sh"
-    "demo.sh"
-    "install.sh"
-    "uninstall.sh"
+    "src/statusline.sh"
+    "scripts/install.sh"
+    "scripts/uninstall.sh"
+    "scripts/demo.sh"
+    "scripts/verify.sh"
+    "tests/test.sh"
     "README.md"
-    "CONTRIBUTING.md"
+    "docs/CONTRIBUTING.md"
     "CHANGELOG.md"
     "LICENSE"
     ".gitignore"
-    "settings.example.json"
-    "PROJECT_SUMMARY.md"
-    "QUICK_REFERENCE.md"
+    "config/settings.example.json"
+    "docs/PROJECT_SUMMARY.md"
+    "docs/QUICK_REFERENCE.md"
+    "run.sh"
 )
 
-# 可执行文件
+# 可执行文件（相对于项目根目录）
 EXECUTABLES=(
-    "statusline.sh"
-    "test.sh"
-    "demo.sh"
-    "install.sh"
-    "uninstall.sh"
+    "src/statusline.sh"
+    "tests/test.sh"
+    "scripts/demo.sh"
+    "scripts/install.sh"
+    "scripts/uninstall.sh"
+    "scripts/verify.sh"
+    "run.sh"
 )
 
 echo -e "${BOLD}检查必需文件...${NC}"
@@ -118,8 +122,11 @@ echo ""
 echo -e "${BOLD}运行快速测试...${NC}"
 echo ""
 
+# 切换到项目根目录
+cd "$(dirname "$0")/.."
+
 test_input='{"workspace":{"current_dir":"/tmp"},"context_window":{"used_percentage":25}}'
-if output=$(echo "$test_input" | ./statusline.sh 2>&1); then
+if output=$(echo "$test_input" | ./src/statusline.sh 2>&1); then
     echo -e "${GREEN}✓${NC} 状态栏脚本运行正常"
     echo ""
     echo "输出示例:"
@@ -134,9 +141,9 @@ echo ""
 echo -e "${BOLD}项目统计${NC}"
 echo ""
 
-total_lines=$(wc -l *.sh 2>/dev/null | tail -1 | awk '{print $1}')
-doc_size=$(du -sh *.md 2>/dev/null | tail -1 | awk '{print $1}')
-total_files=$(ls -1 | wc -l | tr -d ' ')
+total_lines=$(find src tests scripts -name '*.sh' 2>/dev/null | xargs wc -l 2>/dev/null | tail -1 | awk '{print $1}')
+doc_size=$(du -sh docs 2>/dev/null | awk '{print $1}')
+total_files=$(find . -type f -not -path './.git/*' | wc -l | tr -d ' ')
 
 echo "  总文件数: $total_files"
 echo "  代码行数: $total_lines 行"
@@ -147,9 +154,9 @@ echo -e "${BOLD}${GREEN}✅ 项目验证完成！${NC}"
 echo ""
 echo -e "${BOLD}下一步:${NC}"
 echo ""
-echo "  1. 运行测试套件:     ${BLUE}./test.sh${NC}"
-echo "  2. 查看演示:         ${BLUE}./demo.sh${NC}"
-echo "  3. 安装到系统:       ${BLUE}./install.sh${NC}"
-echo "  4. 查看项目总结:     ${BLUE}cat PROJECT_SUMMARY.md${NC}"
-echo "  5. 查看快速参考:     ${BLUE}cat QUICK_REFERENCE.md${NC}"
+echo "  1. 运行测试套件:     ${BLUE}./run.sh test${NC}"
+echo "  2. 查看演示:         ${BLUE}./run.sh demo${NC}"
+echo "  3. 安装到系统:       ${BLUE}./run.sh install${NC}"
+echo "  4. 查看项目总结:     ${BLUE}cat docs/PROJECT_SUMMARY.md${NC}"
+echo "  5. 查看快速参考:     ${BLUE}cat docs/QUICK_REFERENCE.md${NC}"
 echo ""
