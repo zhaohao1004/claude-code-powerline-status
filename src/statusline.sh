@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ==============================================================================
 # Claude Code Powerline 状态栏
@@ -189,11 +189,14 @@ build_git_segment() {
 
     if [ -n "$status_output" ]; then
         # 统计修改的文件
-        modified=$(echo "$status_output" | grep -c '^ M\|^ M\|^MM' 2>/dev/null || echo 0)
+        modified=$(echo "$status_output" | grep -cE '^ M|^ M|^MM' 2>/dev/null || echo 0)
+        modified=$(echo "$modified" | tr -d '[:space:]')
         # 统计已暂存的文件
-        staged=$(echo "$status_output" | grep -c '^[MADRC]' 2>/dev/null || echo 0)
+        staged=$(echo "$status_output" | grep -cE '^[MADRC]' 2>/dev/null || echo 0)
+        staged=$(echo "$staged" | tr -d '[:space:]')
         # 统计未跟踪的文件
-        untracked=$(echo "$status_output" | grep -c '^??' 2>/dev/null || echo 0)
+        untracked=$(echo "$status_output" | grep -cE '^\?\?' 2>/dev/null || echo 0)
+        untracked=$(echo "$untracked" | tr -d '[:space:]')
     fi
 
     # 构建状态文本
