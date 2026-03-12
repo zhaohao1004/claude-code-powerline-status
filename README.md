@@ -2,7 +2,7 @@
 
 一个功能丰富、美观的 Powerline 风格状态栏，为 Claude Code 实时显示关键开发信息。
 
-![Status Bar Preview](https://via.placeholder.com/800x40?text=status-bar%20%E2%9D%B0%20status-bar%20%E2%9D%B1%20%E2%9D%B0%20%E2%94%A0%20main%20%E2%9C%93%20%E2%9D%B1%20%E2%9D%B0%20wt:%20feature%20%E2%9D%B1%20%E2%9D%B0%20Sonnet%20%E2%9D%B1%20%E2%9D%B0%20ctx%20%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%90%90%E2%90%90%E2%90%90%E2%90%90%E2%90%90%2050%%20%E2%9D%B1)
+![Status Bar Preview](https://via.placeholder.com/800x40?text=claude-code-powerline-status%20%E2%9D%B0%20claude-code-powerline-status%20%E2%9D%B1%20%E2%9D%B0%20%E2%94%A0%20main%20%E2%9C%93%20%E2%9D%B1%20%E2%9D%B0%20wt:%20feature%20%E2%9D%B1%20%E2%9D%B0%20Sonnet%20%E2%9D%B1%20%E2%9D%B0%20ctx%20%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%96%93%E2%90%90%E2%90%90%E2%90%90%E2%90%90%E2%90%90%2050%%20%E2%9D%B1)
 
 ## ✨ 功能特性
 
@@ -326,7 +326,7 @@ Claude Code 会通过 stdin 传递以下 JSON 数据：
 脚本输出 ANSI 转义序列，Claude Code 会自动渲染：
 
 ```bash
-\033[48;5;34m\033[38;5;231m status-bar \033[0m\033[48;5;28m\033[38;5;34m \033[0m...
+\033[48;5;34m\033[38;5;231m claude-code-powerline-status \033[0m\033[48;5;28m\033[38;5;34m \033[0m...
 ```
 
 ## 🤝 贡献
@@ -337,8 +337,8 @@ Claude Code 会通过 stdin 传递以下 JSON 数据：
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/status-bar.git
-cd status-bar
+git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+cd claude-code-powerline-status
 
 # 运行测试
 ./run.sh test
@@ -371,8 +371,8 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ---
 
-**开发者：** [your-username]
+**开发者：** [zhaohao1004](https://github.com/zhaohao1004)
 
-**问题反馈：** [GitHub Issues](https://github.com/your-username/status-bar/issues)
+**问题反馈：** [GitHub Issues](https://github.com/zhaohao1004/claude-code-powerline-status/issues)
 
-**文档：** [README.md](https://github.com/your-username/status-bar#readme)
+**文档：** [README.md](https://github.com/zhaohao1004/claude-code-powerline-status#readme)

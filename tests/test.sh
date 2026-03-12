@@ -233,7 +233,7 @@ echo "输入: 完整的 JSON 数据"
 echo ""
 test_input='{
   "workspace": {
-    "current_dir": "/Users/zhaohao/Projects/personal/status-bar"
+    "current_dir": "/Users/zhaohao/Projects/personal/claude-code-powerline-status"
   },
   "model": {
     "display_name": "claude-sonnet-4-6"

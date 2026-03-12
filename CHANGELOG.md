@@ -90,8 +90,8 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/your-username/status-bar.git
-cd status-bar
+git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+cd claude-code-powerline-status
 
 # 2. 运行安装脚本
 ./install.sh
@@ -101,5 +101,5 @@ cd status-bar
 
 ---
 
-[Unreleased]: https://github.com/your-username/status-bar/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/your-username/status-bar/releases/tag/v1.0.0
+[Unreleased]: https://github.com/zhaohao1004/claude-code-powerline-status/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/zhaohao1004/claude-code-powerline-status/releases/tag/v1.0.0

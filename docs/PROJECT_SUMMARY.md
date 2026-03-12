@@ -194,8 +194,8 @@ Context   动态颜色    白字
 
 ### 方式 1: 自动安装（推荐）
 ```bash
-git clone https://github.com/your-username/status-bar.git
-cd status-bar
+git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+cd claude-code-powerline-status
 ./install.sh
 # 重启 Claude Code
 ```

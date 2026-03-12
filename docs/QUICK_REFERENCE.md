@@ -4,8 +4,8 @@
 
 ```bash
 # 1. 克隆并安装
-git clone https://github.com/your-username/status-bar.git
-cd status-bar && ./install.sh
+git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+cd claude-code-powerline-status && ./install.sh
 
 # 2. 重启 Claude Code
 # 退出当前会话，重新运行 claude 命令

@@ -361,20 +361,20 @@ main() {
     local input
     input=$(cat 2>/dev/null) || {
         # 如果读取失败，输出默认状态栏
-        echo "status-bar"
+        echo "claude-code-powerline-status"
         exit 0
     }
 
     # 检查输入是否为空
     if [ -z "$input" ]; then
-        echo "status-bar"
+        echo "claude-code-powerline-status"
         exit 0
     fi
 
     # 验证 JSON 格式
     if ! echo "$input" | jq empty 2>/dev/null; then
         log_error "Invalid JSON input"
-        echo "status-bar (error)"
+        echo "claude-code-powerline-status (error)"
         exit 0
     fi
 

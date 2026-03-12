@@ -8,7 +8,7 @@
 
 如果你发现了 bug 或有功能建议：
 
-1. 检查 [Issues](https://github.com/your-username/status-bar/issues) 中是否已经有相关问题
+1. 检查 [Issues](https://github.com/zhaohao1004/claude-code-powerline-status/issues) 中是否已经有相关问题
 2. 如果没有，创建新的 Issue，包含：
    - 清晰的标题和描述
    - 复现步骤（如果是 bug）
@@ -20,8 +20,8 @@
 
 1. **Fork 仓库**
    ```bash
-   git clone https://github.com/your-username/status-bar.git
-   cd status-bar
+   git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+   cd claude-code-powerline-status
    ```
 
 2. **创建分支**
@@ -118,7 +118,7 @@ gcc() {
 ## 🏗️ 项目结构
 
 ```
-status-bar/
+claude-code-powerline-status/
 ├── statusline.sh          # 主脚本
 ├── test.sh                # 测试套件
 ├── demo.sh                # 演示脚本
@@ -137,8 +137,8 @@ status-bar/
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/your-username/status-bar.git
-cd status-bar
+git clone https://github.com/zhaohao1004/claude-code-powerline-status.git
+cd claude-code-powerline-status
 
 # 2. 安装开发依赖
 brew install shellcheck shfmt  # macOS
@@ -199,9 +199,9 @@ git -C "/path/to/repo" status --porcelain
 
 ## 📞 联系方式
 
-- **Issues**: [GitHub Issues](https://github.com/your-username/status-bar/issues)
-- **Pull Requests**: [GitHub PRs](https://github.com/your-username/status-bar/pulls)
-- **讨论**: [GitHub Discussions](https://github.com/your-username/status-bar/discussions)
+- **Issues**: [GitHub Issues](https://github.com/zhaohao1004/claude-code-powerline-status/issues)
+- **Pull Requests**: [GitHub PRs](https://github.com/zhaohao1004/claude-code-powerline-status/pulls)
+- **讨论**: [GitHub Discussions](https://github.com/zhaohao1004/claude-code-powerline-status/discussions)
 
 ## 📜 许可证
 
